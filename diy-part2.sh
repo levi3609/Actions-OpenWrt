@@ -35,10 +35,10 @@ rm -rf feeds/packages/lang/node
 git clone https://github.com/sbwml/feeds_packages_lang_node-prebuilt -b packages-23.05 feeds/packages/lang/node
 
 # 下载 AdGuardHome core
-mkdir -p files/usr/bin || true
-AGH_CORE=$(curl -sL https://api.github.com/repos/AdguardTeam/AdGuardHome/releases/latest | grep /AdGuardHome_linux_${ARCH} | awk -F '"' '{print $4}') || true
-wget -qO- $AGH_CORE | tar -zxv -C files/usr/bin/ ./AdGuardHome/AdGuardHome || true
-chmod +x files/usr/bin/AdGuardHome/AdGuardHome || true
+#mkdir -p files/usr/bin || true
+#AGH_CORE=$(curl -sL https://api.github.com/repos/AdguardTeam/AdGuardHome/releases/latest | grep /AdGuardHome_linux_${ARCH} | awk -F '"' '{print $4}') || true
+#wget -qO- $AGH_CORE | tar -zxv -C files/usr/bin/ ./AdGuardHome/AdGuardHome || true
+#chmod +x files/usr/bin/AdGuardHome/AdGuardHome || true
 
 # 修改 ttyd root 直接登录
 sed -i 's#/bin/login#/bin/login -f root#g' feeds/packages/utils/ttyd/files/ttyd.config
